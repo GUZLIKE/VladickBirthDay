@@ -11,4 +11,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+
+    public static void hello(){
+        System.out.printf("asdsadfdga");
+        int i = 0;
+    }
 }
