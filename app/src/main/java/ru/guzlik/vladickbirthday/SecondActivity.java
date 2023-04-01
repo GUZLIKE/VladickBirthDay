@@ -76,11 +76,10 @@ public class SecondActivity extends AppCompatActivity {
                 if (actionId == EditorInfo.IME_ACTION_DONE){
                     String enteredPassword = password.getText().toString();
                     if (!TextUtils.isEmpty(enteredPassword)){
-                        text2.setText("ТЫ ЧЁ ЕБЛАН? ТЫ РЕАЛЬНО ДУМАЛ ЧТО У НЕГО ТАКОЙ ПАРОЛЬ?");
+                        text2.setText("\t\t\nТЫ ЧЁ ЕБЛАН? \t\t\nТЫ РЕАЛЬНО ДУМАЛ ЧТО \t\t\nУ НЕГО ТАКОЙ ПАРОЛЬ?");
                         password.setVisibility(View.GONE);
                     } else {
                         text2.setText("ПОСОСИ");
-                        password.setVisibility(View.GONE);
                     }
                     return true;
                 }
@@ -94,7 +93,8 @@ public class SecondActivity extends AppCompatActivity {
         star.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    password.setVisibility(View.VISIBLE);
+                star.setVisibility(View.GONE);
+                password.setVisibility(View.VISIBLE);
                     password.requestFocus();
                     InputMethodManager imm = (InputMethodManager)
                             getSystemService(Context.INPUT_METHOD_SERVICE);

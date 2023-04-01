@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
         text.setVisibility(View.VISIBLE);
         clickCreature();
-        showToast();
 
 
     }
@@ -62,10 +61,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    public void showToast(){
-        Toast.makeText(this, "НАЖМИ НА ЧЕЛОВЕЧКА ЧТОБЫ НАЧАТЬ", Toast.LENGTH_LONG).show();
-    }
+//
+//    public void showToast(){
+//        Toast.makeText(this, "НАЖМИ НА ЧЕЛОВЕЧКА ЧТОБЫ НАЧАТЬ", Toast.LENGTH_LONG).show();
+//    }
 
 
 
