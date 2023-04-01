@@ -95,6 +95,7 @@ public class SecondActivity extends AppCompatActivity {
 
                     } else {
                         text2.setText("ПОСОСИ");
+                        password.setVisibility(View.GONE);
                         creature.setVisibility(View.GONE);
                         creatureSecond.setVisibility(View.VISIBLE);
 
@@ -131,13 +132,41 @@ public class SecondActivity extends AppCompatActivity {
         text3.setText(textArrayTask[index]);
         if (counterTask >= 3) {
         text3.setText("");
-                }
+        task.setVisibility(View.VISIBLE);
+            QuestionAnswerCheck();
 
+
+
+
+                }
                }
             }
 
         );
 
+    }
+
+    void QuestionAnswerCheck(){
+        task.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    String enteredTask = task.getText().toString();
+                    if(!TextUtils.isEmpty(enteredTask)){
+                        text3.setText("Молодец ты взломал пентагон но не мысли вышего существа");
+                        task.setVisibility(View.GONE);
+
+
+                    }
+                    else{
+                        text3.setText("Молодец ты взломал пентагон но не мысли вышего существа");
+                        task.setVisibility(View.GONE);
+
+                    }
+                    return true;
+                } return false;
+            }
+        });
     }
 }
 
