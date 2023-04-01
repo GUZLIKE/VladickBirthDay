@@ -15,10 +15,11 @@ public class MainActivity extends AppCompatActivity {
 
     TextView text;
 
+
     ImageView creature;
 
-    private String[] textArray = {"О! ЗДОРОВА! ТУТ ОДНОГО ЧЕЛА НАДО СОБРАТЬ!" , "ПОШЛИ ПОМОЖЕШЬ!"};
-    private int counter = 1;
+    private String[] textArray = {"Ты где пропадал?!" , "У тебя такое важное задание, а ты хуи пинаешь", "Тебе нужно собрать фрагменты 'ВЫШЕГО СУЩЕСТВА' ","БЕЗ НЕГО НАШ МИР БУДЕТ ОБРЕЧЁН!!! ", "Нету времени объяснять, отправляем тебя его спасать!"};
+    private int counter = -1;
 
 
     View view;
@@ -29,10 +30,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         text = (TextView) findViewById(R.id.text);
+
         creature = (ImageView) findViewById(R.id.debil);
+
         text.setVisibility(View.VISIBLE);
         click();
         showToast();
+
 
     }
 
@@ -44,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 counter++;
                 int index = counter % textArray.length;
                 text.setText(textArray[index]);
-                if (counter >= 4) {
+                if (counter >= 5) {
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                     startActivity(intent);
                 }
