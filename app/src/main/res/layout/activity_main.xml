@@ -6,27 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/debil"
-        android:layout_width="146dp"
-        android:layout_height="344dp"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="158dp"
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="694dp"
+        android:layout_height="1021dp"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/creature" />
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/debil"
+            android:layout_width="146sp"
+            android:layout_height="344dp"
+            android:layout_marginStart="158dp"
+            android:layout_marginTop="104dp"
+            android:layout_marginEnd="158dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/creature" />
+
+    </FrameLayout>
 
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="592dp"
         android:layout_marginBottom="116dp"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/frame" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
