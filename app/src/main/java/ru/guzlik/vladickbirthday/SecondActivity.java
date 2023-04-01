@@ -29,6 +29,8 @@ public class SecondActivity extends AppCompatActivity {
     private int counter = -1;
     private int counterTask = -1;
 
+    private String  answer = "4";
+
 
 
     @Override
@@ -88,6 +90,7 @@ public class SecondActivity extends AppCompatActivity {
                     String enteredPassword = password.getText().toString();
                     if (!TextUtils.isEmpty(enteredPassword)) {
                         text2.setText("ТЫ ЧЁ ЕБЛАН? ТЫ РЕАЛЬНО ДУМАЛ ЧТО У НЕГО ТАКОЙ ПАРОЛЬ?");
+                        star.setVisibility(View.GONE);
                         password.setVisibility(View.GONE);
                         creature.setVisibility(View.GONE);
                         creatureSecond.setVisibility(View.VISIBLE);
@@ -134,10 +137,6 @@ public class SecondActivity extends AppCompatActivity {
         text3.setText("");
         task.setVisibility(View.VISIBLE);
             QuestionAnswerCheck();
-
-
-
-
                 }
                }
             }
@@ -152,14 +151,11 @@ public class SecondActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     String enteredTask = task.getText().toString();
-                    if(!TextUtils.isEmpty(enteredTask)){
-                        text3.setText("Молодец ты взломал пентагон но не мысли вышего существа");
-                        task.setVisibility(View.GONE);
-
-
+                    if(!TextUtils.equals(enteredTask,answer)){
+                        text3.setText("ТЫ ЧЁ? ТЫ БЛЯТЬ НЕ МОЖЕШЬ СЛОЖИТЬ 2+2?. МИША ВСЁ ХУЙНЯ ДАВАЙ ПО НОВОЙ");
                     }
-                    else{
-                        text3.setText("Молодец ты взломал пентагон но не мысли вышего существа");
+                    else {
+                        text3.setText("МОЛОДЕЦ! ТЫ ВЗЛОМАЛ ПЕНТАГОН НО НЕ МЫСЛИ ВЫСШЕГО СУЩЕСТВА!");
                         task.setVisibility(View.GONE);
 
                     }
