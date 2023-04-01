@@ -21,7 +21,8 @@ public class SecondActivity extends AppCompatActivity {
     ImageView creature, star;
     EditText password;
 
-    private String[] textArray = {"Вот и ты на месте", "qweqwr", "sdfdfgdgg", "fdefwegrg", "fwefwegweg"};
+
+    private String[] textArray = {"Вот и ты на месте", "Перед тобой ты видишь 'Мысли вышего существа'","Нажми на них и взломай"};
     private int counter = -1;
 
 
@@ -54,7 +55,7 @@ public class SecondActivity extends AppCompatActivity {
                 counter++;
                 int index = counter % textArray.length;
                 text2.setText(textArray[index]);
-                if (counter >= 5){
+                if (counter >= 3){
                     text2.setText("");
                     star.setEnabled(true);
                 }
