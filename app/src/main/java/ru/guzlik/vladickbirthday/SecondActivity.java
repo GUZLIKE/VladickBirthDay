@@ -54,7 +54,7 @@ public class SecondActivity extends AppCompatActivity {
         click();
         showToast();
         clickStar();
-//        passwordInputListener();
+        passwordInputListener();
         clickTask();
 
     }
@@ -80,48 +80,44 @@ public class SecondActivity extends AppCompatActivity {
     }
 
 
-//    void passwordInputListener() {
-//        password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-//            @Override
-//            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-//                if (actionId == EditorInfo.IME_ACTION_DONE) {
-//                    String enteredPassword = password.getText().toString();
-//                    if (!TextUtils.isEmpty(enteredPassword)){
-//                        text2.setText("\t\t\nТЫ ЧЁ ЕБЛАН? \t\t\nТЫ РЕАЛЬНО ДУМАЛ ЧТО \t\t\nУ НЕГО ТАКОЙ ПАРОЛЬ?");
-//                    if (!TextUtils.isEmpty(enteredPassword)) {
-//                        text2.setText("ТЫ ЧЁ ЕБЛАН? ТЫ РЕАЛЬНО ДУМАЛ ЧТО У НЕГО ТАКОЙ ПАРОЛЬ?");
-//                        password.setVisibility(View.GONE);
-//                        creature.setVisibility(View.GONE);
-//                        creatureSecond.setVisibility(View.VISIBLE);
-//
-//
-//                    } else {
-//                        text2.setText("ПОСОСИ");
-//                        creature.setVisibility(View.GONE);
-//                        creatureSecond.setVisibility(View.VISIBLE);
-//
-//                    }
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
-//
-//        });
-//    }
+    void passwordInputListener() {
+        password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    String enteredPassword = password.getText().toString();
+                    if (!TextUtils.isEmpty(enteredPassword)) {
+                        text2.setText("ТЫ ЧЁ ЕБЛАН? ТЫ РЕАЛЬНО ДУМАЛ ЧТО У НЕГО ТАКОЙ ПАРОЛЬ?");
+                        password.setVisibility(View.GONE);
+                        creature.setVisibility(View.GONE);
+                        creatureSecond.setVisibility(View.VISIBLE);
+
+
+                    } else {
+                        text2.setText("ПОСОСИ");
+                        password.setVisibility(View.GONE);
+                        creature.setVisibility(View.GONE);
+                        creatureSecond.setVisibility(View.VISIBLE);
+
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
+
 
     void clickStar() {
 
         star.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                star.setVisibility(View.GONE);
                 password.setVisibility(View.VISIBLE);
-                    password.requestFocus();
-                    InputMethodManager imm = (InputMethodManager)
-                            getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.showSoftInput(password,InputMethodManager.SHOW_IMPLICIT);
-
+                password.requestFocus();
+                InputMethodManager imm = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(password, InputMethodManager.SHOW_IMPLICIT);
             }
         });
     }
@@ -136,13 +132,41 @@ public class SecondActivity extends AppCompatActivity {
         text3.setText(textArrayTask[index]);
         if (counterTask >= 3) {
         text3.setText("");
-                }
+        task.setVisibility(View.VISIBLE);
+            QuestionAnswerCheck();
 
+
+
+
+                }
                }
             }
 
         );
 
+    }
+
+    void QuestionAnswerCheck(){
+        task.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    String enteredTask = task.getText().toString();
+                    if(!TextUtils.isEmpty(enteredTask)){
+                        text3.setText("Молодец ты взломал пентагон но не мысли вышего существа");
+                        task.setVisibility(View.GONE);
+
+
+                    }
+                    else{
+                        text3.setText("Молодец ты взломал пентагон но не мысли вышего существа");
+                        task.setVisibility(View.GONE);
+
+                    }
+                    return true;
+                } return false;
+            }
+        });
     }
 }
 
