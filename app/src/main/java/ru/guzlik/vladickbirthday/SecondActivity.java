@@ -1,6 +1,7 @@
 package ru.guzlik.vladickbirthday;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
@@ -75,6 +76,7 @@ public class SecondActivity extends AppCompatActivity {
         passwordInputListener();
         clickTask();
         QuestionInChinese();
+        chineseTask();
 
     }
 
@@ -158,7 +160,7 @@ public class SecondActivity extends AppCompatActivity {
                     counterTask++;
                     int index = counterTask % textArrayTask.length;
                     animateText3(textArrayTask[index], 10);
-                    if (counterTask >= 3) {
+                    if (counterTask >= 2) {
                         text3.setText("");
                         task.setVisibility(View.VISIBLE);
                         QuestionAnswerCheck();
@@ -205,9 +207,11 @@ public class SecondActivity extends AppCompatActivity {
                     counterInChinese++;
                     int index = counterInChinese % textArrayInChinese.length;
                     animateText4(textArrayInChinese[index], 10);
-                    if (counterInChinese >= 2) {
+                    if (counterInChinese >= 3) {
                         сhineseQuestion.setVisibility(View.VISIBLE);
+                        creatureThird.setEnabled(false);
                         text4.setText("НАХУЯ ТУТ НА КИТАЙСКОМ НАПИСАНО?");
+
                     }
                 }
             }
@@ -221,8 +225,8 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if(!isAnimating && actionId == EditorInfo.IME_ACTION_DONE){
-                    String enteredTask = task.getText().toString();
-                    if(!TextUtils.equals(enteredTask,answer)){
+                    String enteredTask = сhineseQuestion.getText().toString();
+                    if(!TextUtils.equals(enteredTask,сhinese)){
                         isAnimating = false;
                         animateText4("ПРОБУЙ ЕЩЁ!",10);
                     }
@@ -230,6 +234,8 @@ public class SecondActivity extends AppCompatActivity {
                         сhineseQuestion.setVisibility(View.GONE);
                         isAnimating = false;
                         animateText4("ХОРОШ!",10);
+                        Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
+                        startActivity(intent);
 
 
                     }
