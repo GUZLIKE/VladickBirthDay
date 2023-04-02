@@ -28,6 +28,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/creature" />
 
+    <ImageView
+        android:id="@+id/debil4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="812dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/creature" />
+
     <TextView
         android:id="@+id/text2"
         android:layout_width="308dp"
@@ -44,6 +54,21 @@
 
     <TextView
         android:id="@+id/text3"
+        android:layout_width="276dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="426dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="357dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.478" />
+    <TextView
+        android:id="@+id/text4"
         android:layout_width="276dp"
         android:layout_height="100dp"
         android:layout_marginStart="165dp"
@@ -92,6 +117,24 @@
         app:layout_constraintVertical_bias="0.399" />
 
     <EditText
+        android:id="@+id/сhineseQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100sp"
+        android:layout_marginEnd="101sp"
+        android:ems="10"
+        android:hint="他媽的是用中文寫的:"
+        android:inputType="text"
+        android:text=""
+        android:imeOptions="flagNoFullscreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.399" />
+
+    <EditText
         android:id="@+id/task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -103,5 +146,6 @@
         android:text=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
