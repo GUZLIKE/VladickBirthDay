@@ -10,12 +10,14 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class SecondActivity extends AppCompatActivity {
     TextView text2, text3, text4;
@@ -26,6 +28,8 @@ public class SecondActivity extends AppCompatActivity {
     EditText сhineseQuestion;
 
     EditText task;
+
+    Button buttonThirdActivity;
 
 
 
@@ -40,13 +44,14 @@ public class SecondActivity extends AppCompatActivity {
 
     private boolean isAnimating = false;
     private String  answer = "4";
-    private String  сhinese = "Нахуя тут на китайском написано";
+    private String chinese = "Нахуя тут на китайском написано";
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.second_activity);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -62,6 +67,7 @@ public class SecondActivity extends AppCompatActivity {
         creatureSecond.setVisibility(View.GONE);
         creatureThird.setVisibility(View.GONE);
         task = (EditText) findViewById(R.id.task);
+        buttonThirdActivity = (Button) findViewById(R.id.buttonThirdActivity);
 
         task.setVisibility(View.GONE);
         сhineseQuestion.setVisibility(View.GONE);
@@ -77,7 +83,7 @@ public class SecondActivity extends AppCompatActivity {
         clickTask();
         QuestionInChinese();
         chineseTask();
-
+        buttonThirdActivityClick();
     }
 
     void click() {
@@ -99,7 +105,15 @@ public class SecondActivity extends AppCompatActivity {
     });
 }
 
-
+    void buttonThirdActivityClick(){
+        buttonThirdActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
 
 
     void passwordInputListener() {
@@ -175,7 +189,7 @@ public class SecondActivity extends AppCompatActivity {
         task.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (!isAnimating && actionId == EditorInfo.IME_ACTION_DONE) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
                     String enteredTask = task.getText().toString();
                     if(!TextUtils.equals(enteredTask,answer)){
                         isAnimating = false;
@@ -206,12 +220,11 @@ public class SecondActivity extends AppCompatActivity {
                     text3.setText("");
                     counterInChinese++;
                     int index = counterInChinese % textArrayInChinese.length;
-                    animateText4(textArrayInChinese[index], 10);
+                    text4.setText(textArrayInChinese[index]);
                     if (counterInChinese >= 3) {
-                        сhineseQuestion.setVisibility(View.VISIBLE);
                         creatureThird.setEnabled(false);
-                        text4.setText("НАХУЯ ТУТ НА КИТАЙСКОМ НАПИСАНО?");
-
+                        сhineseQuestion.setVisibility(View.VISIBLE);
+                        text4.setText("Нахуя тут на китайском написано");
                     }
                 }
             }
@@ -224,23 +237,26 @@ public class SecondActivity extends AppCompatActivity {
 
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(!isAnimating && actionId == EditorInfo.IME_ACTION_DONE){
+                if(actionId == EditorInfo.IME_ACTION_DONE){
                     String enteredTask = сhineseQuestion.getText().toString();
-                    if(!TextUtils.equals(enteredTask,сhinese)){
+                    if(!TextUtils.equals(enteredTask, chinese)){
                         isAnimating = false;
                         animateText4("ПРОБУЙ ЕЩЁ!",10);
+                        creatureThird.setEnabled(true);
+
                     }
                     else {
-                        сhineseQuestion.setVisibility(View.GONE);
                         isAnimating = false;
-                        animateText4("ХОРОШ!",10);
+                        сhineseQuestion.setVisibility(View.GONE);
                         Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
                         startActivity(intent);
 
 
                     }
+
                     return true;
-                }  return false;
+                }
+                return false;
 
             }
 

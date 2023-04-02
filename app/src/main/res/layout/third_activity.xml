@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/gleb" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linout"
         android:layout_width="399dp"
         android:layout_height="297dp"
         android:layout_marginStart="250dp"
@@ -69,16 +69,17 @@
 
     <TextView
         android:id="@+id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="222dp"
-        android:text="TextView"
+        android:layout_width="296dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="179dp"
+        android:layout_marginTop="1019dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="105dp"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.195" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
