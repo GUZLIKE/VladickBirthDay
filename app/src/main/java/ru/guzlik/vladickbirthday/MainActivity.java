@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         text = (TextView) findViewById(R.id.text);
         creature = (ImageView) findViewById(R.id.debil);
-        frameLayout = (FrameLayout) findViewById(R.id.frame);
+        frameLayout = (FrameLayout) findViewById(R.id.layout);
 
 
 

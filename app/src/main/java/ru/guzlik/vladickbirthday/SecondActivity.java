@@ -24,7 +24,7 @@ public class SecondActivity extends AppCompatActivity {
     EditText task;
 
 
-    private String[] textArray = {"Вот и ты на месте", "Перед тобой ты видишь 'Мысли вышего существа'", "Нажми на них и взломай"};
+    private String[] textArray = {"Вот мы и на месте", "Перед тобой 'Мысли вышего существа'", "Нажми на них и взломай"};
     private String[] textArrayTask = {"Я думал ты знаешь пароль", "Нужен другой способ взломать", "Попробуй вот это "};
     private int counter = -1;
     private int counterTask = -1;
@@ -98,6 +98,7 @@ public class SecondActivity extends AppCompatActivity {
 
                     } else {
                         text2.setText("ПОСОСИ");
+                        star.setVisibility(View.GONE);
                         password.setVisibility(View.GONE);
                         creature.setVisibility(View.GONE);
                         creatureSecond.setVisibility(View.VISIBLE);
@@ -155,10 +156,11 @@ public class SecondActivity extends AppCompatActivity {
                         text3.setText("ТЫ ЧЁ? ТЫ БЛЯТЬ НЕ МОЖЕШЬ СЛОЖИТЬ 2+2?. МИША ВСЁ ХУЙНЯ ДАВАЙ ПО НОВОЙ");
                     }
                     else {
-                        text3.setText("МОЛОДЕЦ! ТЫ ВЗЛОМАЛ ПЕНТАГОН НО НЕ МЫСЛИ ВЫСШЕГО СУЩЕСТВА!");
                         task.setVisibility(View.GONE);
-
+                        Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
+                        startActivity(intent);
                     }
+
                     return true;
                 } return false;
             }
