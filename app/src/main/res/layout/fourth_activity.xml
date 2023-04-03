@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="290dp"
+        android:layout_height="95dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="724dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="290dp"
+        android:layout_height="95dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="724dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linout"
+        android:layout_width="344dp"
+        android:layout_height="212dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="440dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/Answer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="жак фреско" />
+
+        <Button
+            android:id="@+id/Answer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Путин  " />
+
+        <Button
+            android:id="@+id/Answer3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Я" />
+
+        <Button
+            android:id="@+id/Answer4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Мёртвый японец " />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/debil1"
+        android:layout_width="230dp"
+        android:layout_height="281dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="832dp"
+        android:src="@drawable/vlad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/debil2"
+        android:layout_width="230dp"
+        android:layout_height="281dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="832dp"
+        android:src="@drawable/vlad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/berserk"
+        android:layout_width="465dp"
+        android:layout_height="215dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="296dp"
+        android:text="Что вершит судьбу человечества в этом мире? Некое незримое существо или закон, подобно Длани Господней парящей над миром? По крайне мере истинно то, что человек не властен даже над своей волей."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

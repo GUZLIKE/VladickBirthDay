@@ -21,7 +21,7 @@
         android:layout_height="297dp"
         android:layout_marginStart="250dp"
         android:layout_marginEnd="250dp"
-        android:layout_marginBottom="224dp"
+        android:layout_marginBottom="248dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,23 +57,52 @@
 
     <ImageView
         android:id="@+id/debil1"
-        android:layout_width="122dp"
-        android:layout_height="303dp"
+        android:layout_width="181dp"
+        android:layout_height="351dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/creature" />
+        app:srcCompat="@drawable/vlad" />
+
+    <ImageView
+        android:id="@+id/debil2"
+        android:layout_width="181dp"
+        android:layout_height="351dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/vlad" />
 
     <TextView
         android:id="@+id/text1"
-        android:layout_width="296dp"
-        android:layout_height="69dp"
+        android:layout_width="272dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="864dp"
+        android:gravity="center"
         android:text=""
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="891dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="272dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="864dp"
+        android:gravity="center"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
