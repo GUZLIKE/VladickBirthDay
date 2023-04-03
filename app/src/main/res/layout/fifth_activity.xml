@@ -1,6 +1,302 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/debil1"
+        android:layout_width="230dp"
+        android:layout_height="281dp"
+        android:layout_gravity="center"
+        android:src="@drawable/vlad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <ImageView
+        android:id="@+id/debil4"
+        android:layout_width="230dp"
+        android:layout_height="281dp"
+        android:layout_gravity="center"
+        android:src="@drawable/vlad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <ImageView
+        android:id="@+id/debil3"
+        android:layout_width="230dp"
+        android:layout_height="281dp"
+        android:layout_gravity="center"
+        android:src="@drawable/vlad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/debil2"
+        android:layout_width="230dp"
+        android:layout_height="281dp"
+        android:layout_gravity="center"
+        android:src="@drawable/vlad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="228dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="728dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="228dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="728dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="228dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="728dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="228dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="728dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textIvan"
+        android:layout_width="159dp"
+        android:layout_height="84dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="388dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivan"
+        android:layout_width="354dp"
+        android:layout_height="490dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="152dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/boss" />
+
+    <LinearLayout
+        android:id="@+id/linout"
+        android:layout_width="344dp"
+        android:layout_height="212dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="408dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/Answer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Берк?" />
+
+        <Button
+            android:id="@+id/Answer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Java  " />
+
+        <Button
+            android:id="@+id/Answer3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Петухон" />
+
+        <Button
+            android:id="@+id/Answer4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Глеб " />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linout2"
+        android:layout_width="344dp"
+        android:layout_height="212dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="408dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/Answer11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="98.7%" />
+
+        <Button
+            android:id="@+id/Answer22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="89.9%  " />
+
+        <Button
+            android:id="@+id/Answer33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1488.1%" />
+
+        <Button
+            android:id="@+id/Answer44"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="228.5% " />
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/petyx"
+        android:layout_width="417dp"
+        android:layout_height="538dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/putyhon"
+        tools:layout_editor_absoluteY="-55dp" />
+
+
+    <ImageView
+        android:id="@+id/spirt"
+        android:layout_width="307dp"
+        android:layout_height="317dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="636dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/spirt" />
+
+    <ImageView
+        android:id="@+id/love"
+        android:layout_width="346dp"
+        android:layout_height="252dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="224dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/love" />
+
+    <TextView
+        android:id="@+id/textlove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="332dp"
+        android:text="КОГО ЛЮБИТ ВЛАД?!?!?!?!?!?"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linout3"
+        android:layout_width="344dp"
+        android:layout_height="212dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="408dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/Answer111"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ева" />
+
+        <Button
+            android:id="@+id/Answer222"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ева  " />
+
+        <Button
+            android:id="@+id/Answer333"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ева" />
+
+        <Button
+            android:id="@+id/Answer444"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ева " />
+
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

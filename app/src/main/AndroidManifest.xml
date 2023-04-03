@@ -39,6 +39,14 @@
             android:exported="false"/>
 
 
+        <activity
+            android:name=".SixthLastActivity"
+            android:exported="false"/>
+
+
+
+
+
     </application>
 
 

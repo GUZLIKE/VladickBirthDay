@@ -65,6 +65,7 @@ public class ThirdActivity extends AppCompatActivity {
                 creature2.setVisibility(View.VISIBLE);
                 creature.setVisibility(View.GONE);
                 creature.setEnabled(true);
+                clickCreature2();
                 text2.setVisibility(View.GONE);
             }
         });
