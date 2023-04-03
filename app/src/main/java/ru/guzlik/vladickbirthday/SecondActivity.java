@@ -125,7 +125,7 @@ public class SecondActivity extends AppCompatActivity {
                     if (!TextUtils.isEmpty(enteredPassword)) {
                         isAnimating = false;
                         animateText2("ТЫ ЧЁ ЕБЛАН? ТЫ РЕАЛЬНО ДУМАЛ ЧТО У НЕГО ТАКОЙ ПАРОЛЬ?",10);
-                        star.setVisibility(View.GONE);
+//                        star.setVisibility(View.GONE);
                         password.setVisibility(View.GONE);
                         creature.setEnabled(true);
                         creature.setVisibility(View.GONE);
@@ -135,7 +135,7 @@ public class SecondActivity extends AppCompatActivity {
                     } else {
                         isAnimating = false;
                         animateText2("ПОСОСИ",10);
-                        star.setVisibility(View.GONE);
+//                        star.setVisibility(View.GONE);
                         password.setVisibility(View.GONE);
                         creature.setEnabled(true);
                         creature.setVisibility(View.GONE);
