@@ -14,16 +14,16 @@ import androidx.appcompat.app.AppCompatDelegate;
 public class ThirdActivity extends AppCompatActivity {
 
 
-    TextView text1,text2;
+    TextView text1, text2;
     ImageView imageSaitama, creature, creature2;
-    Button answer1,answer2,answer3,answer4;
+    Button answer1, answer2, answer3, answer4;
 
     private int counter = -1;
     private int counter2 = -1;
 
 
     private String[] textArray = {"\nОтлично! Мы взломали воспоминания", "\nТеперь нужно ответить на эту хуету",
-            "\n\nБля, ну и хуета, давай отгадывай кто это нарисовал", " "};
+            "\n\nБля, ну и хуета, давай отгадывай кто это нарисовал", " ", " "};
 
     private String[] textArray2 = {"\nВсегда знал что это он!", "\nТеперь переносимся к второму фрагменту", " "};
 
@@ -46,7 +46,6 @@ public class ThirdActivity extends AppCompatActivity {
 
         creature2.setVisibility(View.GONE);
 
-
         answer1.setEnabled(false);
         answer2.setEnabled(false);
         answer3.setEnabled(false);
@@ -57,16 +56,18 @@ public class ThirdActivity extends AppCompatActivity {
 
     }
 
-    void clickAnswers(){
+    void clickAnswers() {
         answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text1.setText("РЕАЛЬНО! ЭТО ЖЕ ЭТОТ LEKNER_89!");
-                creature2.setVisibility(View.VISIBLE);
-                creature.setVisibility(View.GONE);
-                creature.setEnabled(true);
-                clickCreature2();
-                text2.setVisibility(View.GONE);
+                if (!TextAnimation.isAnimating) {
+                    TextAnimation.animateText(text1, "РЕАЛЬНО! ЭТО ЖЕ ЭТОТ LEKNER_89!", 10);
+                    creature2.setVisibility(View.VISIBLE);
+                    creature.setVisibility(View.GONE);
+                    creature.setEnabled(true);
+                    clickCreature2();
+                    text2.setVisibility(View.GONE);
+                }
             }
         });
 
@@ -74,72 +75,79 @@ public class ThirdActivity extends AppCompatActivity {
         answer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text1.setText("Даб даб да. Это же этот дед ебаный");
-                creature.setEnabled(true);
-                clickCreature2();
-                creature2.setVisibility(View.VISIBLE);
-                creature.setVisibility(View.GONE);
-                text2.setVisibility(View.GONE);
+                if (!TextAnimation.isAnimating) {
+                    TextAnimation.animateText(text1, "Даб даб да. Это же этот дед ебаный", 10);
+                    creature.setEnabled(true);
+                    clickCreature2();
+                    creature2.setVisibility(View.VISIBLE);
+                    creature.setVisibility(View.GONE);
+                    text2.setVisibility(View.GONE);
 
+                }
             }
         });
 
         answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text1.setText("Да, точно!\nЭто же SCP-096!\nДОЛГОВЯЗЫЙ УЕБАН!");
-                creature.setEnabled(true);
-                clickCreature2();
-                creature2.setVisibility(View.VISIBLE);
-                creature.setVisibility(View.GONE);
-                text2.setVisibility(View.GONE);
+                if (!TextAnimation.isAnimating) {
+                    TextAnimation.animateText(text1, "Да, точно!\nЭто же SCP-096!\nДОЛГОВЯЗЫЙ УЕБАН!", 10);
+                    creature.setEnabled(true);
+                    clickCreature2();
+                    creature2.setVisibility(View.VISIBLE);
+                    creature.setVisibility(View.GONE);
+                    text2.setVisibility(View.GONE);
 
+                }
             }
         });
 
         answer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text1.setText("РЕАЛЬНО! ЭТО ЖЕ ЛЕКТОР_98!");
-                creature.setEnabled(true);
-                clickCreature2();
-                creature2.setVisibility(View.VISIBLE);
-                creature.setVisibility(View.GONE);
-                text2.setVisibility(View.GONE);
+                if (!TextAnimation.isAnimating) {
+                    TextAnimation.animateText(text1, "РЕАЛЬНО! ЭТО ЖЕ ЛЕКТОР_98!", 10);
+                    creature.setEnabled(true);
+                    clickCreature2();
+                    creature2.setVisibility(View.VISIBLE);
+                    creature.setVisibility(View.GONE);
+                    text2.setVisibility(View.GONE);
 
+                }
+
+            }
+        });
+    }
+
+    void clickCreature2() {
+        creature2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!TextAnimation.isAnimating) {
+                    counter2++;
+                    int index = counter2 % textArray2.length;
+                    TextAnimation.animateText(text1, textArray2[index], 10);
+                    if (counter2 >= 2) {
+
+                        Intent intent = new Intent(ThirdActivity.this, FourthActivity.class);
+                        startActivity(intent);
+
+                    }
+                }
             }
 
         });
     }
-
-    void clickCreature2(){
-        creature2.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            counter2++;
-            int index = counter2 % textArray2.length;
-            text1.setText(textArray2[index]);
-            if(counter2>=2){
-
-                Intent intent = new Intent(ThirdActivity.this, FourthActivity.class);
-                startActivity(intent);
-
-            }
-        }
-    });
-
-    }
-
-
 
 
     void clickCreature() {
         creature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!TextAnimation.isAnimating) {
                     counter++;
                     int index = counter % textArray.length;
-                    text1.setText(textArray[index]);
+                    TextAnimation.animateText(text1,textArray[index],10);
                     if (counter >= 4) {
                         text1.setText("");
                         creature.setEnabled(false);
@@ -149,8 +157,9 @@ public class ThirdActivity extends AppCompatActivity {
                         answer4.setEnabled(true);
                     }
                 }
-            });
+            }
+        });
+
+
     }
-
-
 }

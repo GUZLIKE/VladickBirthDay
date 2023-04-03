@@ -1,6 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="618dp"
+        android:layout_height="1763dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="589dp"
+        android:background="@drawable/gg"
+        android:src="@drawable/gg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/debilEnd"
+        android:layout_width="286dp"
+        android:layout_height="308dp"
+        android:layout_marginTop="855dp"
+        android:layout_marginEnd="252dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/vlad" />
+
+    <ImageView
+        android:id="@+id/debilEnd2"
+        android:layout_width="286dp"
+        android:layout_height="308dp"
+        android:layout_marginTop="855dp"
+        android:layout_marginEnd="252dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/vlad" />
+
+    <TextView
+        android:id="@+id/textEnd"
+        android:layout_width="333dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="716dp"
+        android:layout_marginEnd="169dp"
+        android:layout_marginBottom="403dp"
+        android:text=""
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textEnd2"
+        android:layout_width="333dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="716dp"
+        android:layout_marginEnd="169dp"
+        android:layout_marginBottom="403dp"
+        android:text=""
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/gigaGuz"
+        android:layout_width="252dp"
+        android:layout_height="562dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/giga" />
+
+    <ImageView
+        android:id="@+id/gigaDed"
+        android:layout_width="258dp"
+        android:layout_height="330dp"
+        android:layout_marginTop="124dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gigaded" />
+
+    <ImageView
+        android:id="@+id/cake"
+        android:layout_width="217dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="530dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cakee" />
+
+    <Button
+        android:id="@+id/buttonBlow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="218dp"
+        android:layout_marginTop="792dp"
+        android:layout_marginEnd="234dp"
+        android:background="#FF0000"
+        android:text="ЗАДУТЬ СВЕЧИ!"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

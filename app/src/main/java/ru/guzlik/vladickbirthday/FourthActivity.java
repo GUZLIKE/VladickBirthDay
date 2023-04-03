@@ -24,10 +24,10 @@ public class FourthActivity extends AppCompatActivity {
     private int counter2 = -1;
 
     private String[] textArray = {"\nОтлично! Мы получили первый фрагмент", "\nТеперь нужно ответить на эту хуету",
-            "\n\nЭто изи для тебя будет", " "};
+            "\n\nЭто изи для тебя будет", " ", " "};
 
     private String[] textArray2 = {"\n 0 ошибок гений!", "\n Мы получили второй фрагмент",
-            "\n\nТеперь переходим в последний", " "};
+            "\n\nТеперь переходим в последний", " ", " "};
 
 
     @Override
@@ -45,8 +45,7 @@ public class FourthActivity extends AppCompatActivity {
         creature2.setVisibility(View.GONE);
         text2.setVisibility(View.GONE);
 
-
-        berserk = (TextView) findViewById(R.id.berserk);
+            berserk = (TextView) findViewById(R.id.berserk);
 
         answer1 = (Button) findViewById(R.id.Answer1);
         answer2 = (Button) findViewById(R.id.Answer2);
@@ -68,39 +67,48 @@ public class FourthActivity extends AppCompatActivity {
         answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text1.setText("Почти угадал");
+                if (!TextAnimation.isAnimating){
+                TextAnimation.animateText(text1,"Почти угадал", 10);
                 creature.setEnabled(false);
             }
-        });
+        }
+       });
 
 
         answer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text1.setText("Смысле не правильно?!");
-                creature.setEnabled(false);
+                if (!TextAnimation.isAnimating){
+                TextAnimation.animateText(text1,"Смысле не правильно?!", 10);
+                    creature.setEnabled(false);
             }
-        });
+        }
+       });
 
         answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text1.setText("Не понял :(");
+                if (!TextAnimation.isAnimating){
+                TextAnimation.animateText(text1,"Не понял :(", 10);
                 creature.setEnabled(false);
             }
-        });
+        }
+       });
 
         answer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!TextAnimation.isAnimating){
                 text1.setText("ДА!");
+                TextAnimation.animateText(text1,"ДА!", 10);
                 creature.setVisibility(View.GONE);
                 creature2.setVisibility(View.VISIBLE);
                 text2.setVisibility(View.VISIBLE);
                 creature.setEnabled(true);
                 clickCreature2();
             }
-        });
+        }
+    });
 
 
 
@@ -111,9 +119,10 @@ public class FourthActivity extends AppCompatActivity {
         creature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!TextAnimation.isAnimating){
                 counter++;
                 int index = counter % textArray.length;
-                text1.setText(textArray[index]);
+                TextAnimation.animateText(text1,textArray[index],10);
                 if (counter >= 4) {
                     text1.setText("");
                     creature.setEnabled(false);
@@ -123,17 +132,19 @@ public class FourthActivity extends AppCompatActivity {
                     answer4.setEnabled(true);
                 }
             }
-        });
-    }
+        }
+    });
+}
 
     void clickCreature2() {
         creature2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!TextAnimation.isAnimating){
                 text1.setText("");
                 counter2++;
                 int index = counter2 % textArray2.length;
-                text2.setText(textArray2[index]);
+                TextAnimation.animateText(text2,textArray2[index],10);
                 if (counter2 >= 4) {
                     text2.setText("");
                     Intent intent = new Intent(FourthActivity.this, FifthActivity.class);
@@ -141,8 +152,9 @@ public class FourthActivity extends AppCompatActivity {
 
                 }
             }
-        });
-    }
+        }
+    });
+}
 
 
 

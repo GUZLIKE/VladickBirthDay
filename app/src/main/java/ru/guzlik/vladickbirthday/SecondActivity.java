@@ -29,7 +29,7 @@ public class SecondActivity extends AppCompatActivity {
 
     EditText task;
 
-    Button buttonThirdActivity;
+    Button buttonThirdActivity, buttonFourthActivity, buttonSixActivity;
 
 
 
@@ -68,6 +68,8 @@ public class SecondActivity extends AppCompatActivity {
         creatureThird.setVisibility(View.GONE);
         task = (EditText) findViewById(R.id.task);
         buttonThirdActivity = (Button) findViewById(R.id.buttonThirdActivity);
+        buttonFourthActivity = (Button) findViewById(R.id.buttonFourthActivity);
+        buttonSixActivity = (Button) findViewById(R.id.buttonSixActivity);
 
         task.setVisibility(View.GONE);
         сhineseQuestion.setVisibility(View.GONE);
@@ -84,16 +86,18 @@ public class SecondActivity extends AppCompatActivity {
         QuestionInChinese();
         chineseTask();
         buttonThirdActivityClick();
+        buttonFourthACtivityClick();
+        buttonSixACtivityClick();
     }
 
     void click() {
         creature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isAnimating){
+                if (!TextAnimation.isAnimating){
                 counter++;
                 int index = counter % textArray.length;
-                animateText2(textArray[index],10);
+                TextAnimation.animateText(text2,textArray[index],10);
                 if (counter >= 3) {
                     text2.setText("");
                     star.setEnabled(true);
@@ -105,11 +109,33 @@ public class SecondActivity extends AppCompatActivity {
     });
 }
 
+
+    void buttonSixACtivityClick(){
+        buttonSixActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, SixthLastActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
     void buttonThirdActivityClick(){
         buttonThirdActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    void buttonFourthACtivityClick(){
+        buttonFourthActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, FourthActivity.class);
                 startActivity(intent);
             }
         });
@@ -124,7 +150,7 @@ public class SecondActivity extends AppCompatActivity {
                     String enteredPassword = password.getText().toString();
                     if (!TextUtils.isEmpty(enteredPassword)) {
                         isAnimating = false;
-                        animateText2("ТЫ ЧЁ ЕБЛАН? ТЫ РЕАЛЬНО ДУМАЛ ЧТО У НЕГО ТАКОЙ ПАРОЛЬ?",10);
+                        TextAnimation.animateText(text2,"ТЫ ЧЁ ЕБЛАН? ТЫ РЕАЛЬНО ДУМАЛ ЧТО У НЕГО ТАКОЙ ПАРОЛЬ?",10);
 //                        star.setVisibility(View.GONE);
                         password.setVisibility(View.GONE);
                         creature.setEnabled(true);
@@ -134,7 +160,7 @@ public class SecondActivity extends AppCompatActivity {
 
                     } else {
                         isAnimating = false;
-                        animateText2("ПОСОСИ",10);
+                        TextAnimation.animateText(text2,"ПОСОСИ",10);
 //                        star.setVisibility(View.GONE);
                         password.setVisibility(View.GONE);
                         creature.setEnabled(true);
@@ -169,12 +195,13 @@ public class SecondActivity extends AppCompatActivity {
         creatureSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isAnimating) {
+                if (!TextAnimation.isAnimating) {
                     text2.setText("");
                     counterTask++;
                     int index = counterTask % textArrayTask.length;
-                    animateText3(textArrayTask[index], 10);
+                    TextAnimation.animateText(text3,textArrayTask[index], 10);
                     if (counterTask >= 2) {
+                        password.setVisibility(View.GONE);
                         text3.setText("");
                         task.setVisibility(View.VISIBLE);
                         QuestionAnswerCheck();
@@ -193,14 +220,14 @@ public class SecondActivity extends AppCompatActivity {
                     String enteredTask = task.getText().toString();
                     if(!TextUtils.equals(enteredTask,answer)){
                         isAnimating = false;
-                        animateText3("ТЫ ЧЁ? ТЫ БЛЯТЬ НЕ МОЖЕШЬ СЛОЖИТЬ 2+2?. МИША ВСЁ ХУЙНЯ ДАВАЙ ПО НОВОЙ", 10);
+                        TextAnimation.animateText(text3,"ТЫ ЧЁ? ТЫ БЛЯТЬ НЕ МОЖЕШЬ СЛОЖИТЬ 2+2?. МИША ВСЁ ХУЙНЯ ДАВАЙ ПО НОВОЙ", 10);
 
 
                     }
                     else {
                         isAnimating = false;
                         task.setVisibility(View.GONE);
-                        animateText3("Молодец ты взломал пентагон но не мысли \"ВЫШЕГО СУЩЕСТВА\"", 10);
+                        TextAnimation.animateText(text3,"Молодец ты взломал пентагон но не мысли \"ВЫШЕГО СУЩЕСТВА\"", 10);
                         creatureSecond.setVisibility(View.GONE);
                         creatureSecond.setEnabled(true);
                         creatureThird.setVisibility(View.VISIBLE );
@@ -216,7 +243,7 @@ public class SecondActivity extends AppCompatActivity {
         creatureThird.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isAnimating) {
+                if (!TextAnimation.isAnimating) {
                     text3.setText("");
                     counterInChinese++;
                     int index = counterInChinese % textArrayInChinese.length;
@@ -241,7 +268,7 @@ public class SecondActivity extends AppCompatActivity {
                     String enteredTask = сhineseQuestion.getText().toString();
                     if(!TextUtils.equals(enteredTask, chinese)){
                         isAnimating = false;
-                        animateText4("ПРОБУЙ ЕЩЁ!",10);
+                        TextAnimation.animateText(text4,"ПРОБУЙ ЕЩЁ!",10);
                         creatureThird.setEnabled(true);
 
                     }
@@ -265,64 +292,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
 
-    void animateText2(String text, int delay) {
-        isAnimating = true; // set the flag to indicate that the animation is running
-        index = 0;
-        Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                text2.setText(text.substring(0, index++));
-                if (index <= text.length()) {
-                    handler.postDelayed(this, delay); // delay in milliseconds between characters
-                } else {
-                    isAnimating = false; // reset the flag when the animation is done
-                }
-            }
-        };
-        handler.postDelayed(runnable, delay); // delay before starting the animation
-    }
 
-
-
-
-    void animateText3(String text, int delay) {
-        isAnimating = true; // set the flag to indicate that the animation is running
-        index = 0;
-        Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                text3.setText(text.substring(0, index++));
-                if (index <= text.length()) {
-                    handler.postDelayed(this, delay); // delay in milliseconds between characters
-                } else {
-                    isAnimating = false; // reset the flag when the animation is done
-                }
-            }
-        };
-        handler.postDelayed(runnable, delay); // delay before starting the animation
-    }
-
-
-
-    void animateText4(String text, int delay) {
-        isAnimating = true; // set the flag to indicate that the animation is running
-        index = 0;
-        Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                text4.setText(text.substring(0, index++));
-                if (index <= text.length()) {
-                    handler.postDelayed(this, delay); // delay in milliseconds between characters
-                } else {
-                    isAnimating = false; // reset the flag when the animation is done
-                }
-            }
-        };
-        handler.postDelayed(runnable, delay); // delay before starting the animation
-    }
 
 
     public void showToast() {

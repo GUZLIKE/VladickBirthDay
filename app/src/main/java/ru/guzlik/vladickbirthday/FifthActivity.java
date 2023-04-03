@@ -2,6 +2,7 @@ package ru.guzlik.vladickbirthday;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,7 @@ public class FifthActivity extends AppCompatActivity {
 
     Button answer1, answer2, answer3, answer4 , answer11, answer22, answer33, answer44, answer111, answer222, answer333, answer444;
 
+    MediaPlayer boom,bury;
 
     private int counter = -1;
     private int counter2 = -1;
@@ -60,7 +62,10 @@ public class FifthActivity extends AppCompatActivity {
         textIvan = (TextView) findViewById(R.id.textIvan);
         ivan = (ImageView) findViewById(R.id.ivan);
         petyx = (ImageView) findViewById(R.id.petyx);
-
+        boom = (MediaPlayer) MediaPlayer.create(FifthActivity.this, R.raw.boom);
+        bury = (MediaPlayer) MediaPlayer.create(FifthActivity.this, R.raw.bury);
+        boom.setVolume(10,10);
+        bury.setVolume(10,10);
 
         answer1 = (Button) findViewById(R.id.Answer1);
         answer2 = (Button) findViewById(R.id.Answer2);
@@ -138,6 +143,8 @@ public class FifthActivity extends AppCompatActivity {
         answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boom.start();
+
                 text2.setText("ХОРОШ!");
                 creature.setEnabled(true);
                 text1.setVisibility(View.GONE);
@@ -178,8 +185,9 @@ public class FifthActivity extends AppCompatActivity {
                     text1.setText("");
 
                     ivan.setVisibility(View.VISIBLE);
+                    bury.start();
+                    boom.start();
                     textIvan.setText("ХА ХА ХА ТЕБЕ НЕ ПОЛУЧИТЬ ПОСЛЕДНИЙ ФРАГМЕНТ!");
-
                     if(counter>=4){
                         text1.setText("У тебя 3 жизни если проебёшься гг вп тебе!");
                         if(counter>=5) {
@@ -210,8 +218,8 @@ public class FifthActivity extends AppCompatActivity {
         answer11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                text3.setText("Истенный ты алкаш!");
+                boom.start();
+                text3.setText("Истинный алкаш!");
 
                 creature2.setEnabled(true);
                 textIvan.setText("");
@@ -268,12 +276,12 @@ public class FifthActivity extends AppCompatActivity {
                 if (counter2 >= 4) {
 
                     text2.setText("");
-
+                    boom.start();
                     textIvan.setText("ПОПРОБУЙ ОТГАДАТЬ ЭТО!");
-
                     if(counter2>=5){
                         text2.setText("Будь внимательным!");
                         if(counter2>=6) {
+                            boom.start();
 
                             spirt.setVisibility(View.VISIBLE);
                             answer11.setVisibility(View.VISIBLE);
@@ -301,6 +309,7 @@ public class FifthActivity extends AppCompatActivity {
         answer111.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boom.start();
                 creature3.setVisibility(View.GONE);
                 creature3.setEnabled(true);
                 text4.setText("ТАК И ЗНАЛ");
@@ -320,6 +329,7 @@ public class FifthActivity extends AppCompatActivity {
         answer222.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boom.start();
                 creature3.setVisibility(View.GONE);
                 creature3.setEnabled(true);
                 text4.setText("ТАК И ЗНАЛ!");
@@ -337,6 +347,7 @@ public class FifthActivity extends AppCompatActivity {
         answer333.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boom.start();
                 creature3.setVisibility(View.GONE);
                 creature3.setEnabled(true);
                 text4.setText("ТАК И ЗНАЛ!");
@@ -355,6 +366,7 @@ public class FifthActivity extends AppCompatActivity {
         answer444.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boom.start();
                 creature3.setVisibility(View.GONE);
                 creature3.setEnabled(true);
 
@@ -387,11 +399,10 @@ public class FifthActivity extends AppCompatActivity {
                     text3.setText("");
 
                     textIvan.setText("ЭТО САМЫЙ СЛОЖНЫЙ ВОПРОС ОТ МЕНЯ");
-
                     if(counter3>=5){
                         text3.setText("Надо быть НА ЧЕКУ!");
                         if(counter3>=6) {
-
+                            boom.start();
                             love.setVisibility(View.VISIBLE);
                             textlove.setVisibility(View.VISIBLE);
                             answer111.setVisibility(View.VISIBLE);
@@ -421,10 +432,12 @@ public class FifthActivity extends AppCompatActivity {
           @Override
           public void onClick(View v) {
               textIvan.setText("<--- ТИПА ПОМЕР");
+              boom.start();
               counter4++;
               int index = counter4 % textArray4.length;
               text4.setText(textArray4[index]);
               if(counter4>=4){
+                  bury.stop();
                   Intent intent = new Intent(FifthActivity.this, SixthLastActivity.class);
                   startActivity(intent);
 

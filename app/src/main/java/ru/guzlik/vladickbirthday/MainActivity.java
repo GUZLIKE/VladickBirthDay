@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     private int counter = -1;
     private int index;
 
-    private boolean isAnimating = false;
 
     FrameLayout frameLayout;
 
@@ -47,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         textLang.setVisibility(View.VISIBLE);
         clickCreature();
 
@@ -59,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
         frameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isAnimating) {
+                if (!TextAnimation.isAnimating) {
                     counter++;
                     int index = counter % textArray.length;
-                    animateText(textArray[index], 10); // call the new animateText() method with the current text
+                    TextAnimation.animateText(textLang,textArray[index], 10);
                     if (counter >= 5) {
                         textLang.setText("");
                         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
@@ -73,23 +71,23 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    void animateText(String text, int delay) {
-        isAnimating = true; // set the flag to indicate that the animation is running
-        index = 0;
-        Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                textLang.setText(text.substring(0, index++));
-                if (index <= text.length()) {
-                    handler.postDelayed(this, delay); // delay in milliseconds between characters
-                } else {
-                    isAnimating = false; // reset the flag when the animation is done
-                }
-            }
-        };
-        handler.postDelayed(runnable, delay); // delay before starting the animation
-    }
+//    void animateText(String textEnd, int delay) {
+//        isAnimating = true; // set the flag to indicate that the animation is running
+//        index = 0;
+//        Handler handler = new Handler();
+//        Runnable runnable = new Runnable() {
+//            @Override
+//            public void run() {
+//                textLang.setText(textEnd.substring(0, index++));
+//                if (index <= textEnd.length()) {
+//                    handler.postDelayed(this, delay); // delay in milliseconds between characters
+//                } else {
+//                    isAnimating = false; // reset the flag when the animation is done
+//                }
+//            }
+//        };
+//        handler.postDelayed(runnable, delay); // delay before starting the animation
+//    }
 
 
 

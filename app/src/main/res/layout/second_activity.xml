@@ -111,11 +111,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100sp"
         android:layout_marginEnd="101sp"
+        android:background="@color/white"
         android:ems="10"
         android:hint="Введите пароль:"
         android:inputType="textPersonName"
         android:text=""
-        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.341"
@@ -129,12 +129,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100sp"
         android:layout_marginEnd="101sp"
+        android:background="@color/white"
         android:ems="10"
         android:hint="他媽的是用中文寫的:"
         android:imeOptions="flagNoFullscreen"
         android:inputType="text"
         android:text=""
-        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
@@ -148,11 +148,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"
         android:layout_marginTop="376dp"
+        android:background="@color/white"
         android:ems="10"
         android:hint="2 + 2 = ?:"
         android:inputType="number"
         android:text=""
-        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -170,7 +170,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonFourthActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="420dp"
@@ -196,6 +196,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/brine" />
+
+    <Button
+        android:id="@+id/buttonSixActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1041dp"
+        android:layout_marginEnd="41dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

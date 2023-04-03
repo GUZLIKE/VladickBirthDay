@@ -132,7 +132,7 @@
         android:layout_marginEnd="152dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/boss" />
+        app:srcCompat="@drawable/fedkller" />
 
     <LinearLayout
         android:id="@+id/linout"

@@ -108,6 +108,7 @@
         android:text="Что вершит судьбу человечества в этом мире? Некое незримое существо или закон, подобно Длани Господней парящей над миром? По крайне мере истинно то, что человек не властен даже над своей волей."
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="#FD0303"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
